@@ -295,7 +295,7 @@ void RBOTEvaluator::ExecuteMeasuredTrackingCycle(
   std::chrono::high_resolution_clock::time_point begin_time;
 
   // Update Cameras
-  tracker_ptr->UpdateCameras(false);
+  tracker_ptr->UpdateCameras(false);  // Note: update images
 
   execution_times->calculate_correspondences = 0.0f;
   execution_times->calculate_gradient_and_hessian = 0.0f;

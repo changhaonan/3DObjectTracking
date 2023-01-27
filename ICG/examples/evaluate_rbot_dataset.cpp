@@ -5,9 +5,9 @@
 
 int main() {
   // Directories
-  std::filesystem::path dataset_directory{"/your/path/"};
-  std::filesystem::path external_directory{"/your/path/"};
-  std::filesystem::path result_directory{"/your/path/"};
+  std::filesystem::path dataset_directory{"/home/robot-learning/Projects/3DObjectTracking/ICG/dataset/RBOT_dataset/"};
+  std::filesystem::path external_directory{"/home/robot-learning/Projects/3DObjectTracking/ICG/external/"};
+  std::filesystem::path result_directory{"/home/robot-learning/Projects/3DObjectTracking/ICG/result/"};
 
   // Dataset configuration
   std::vector<std::string> body_names{
@@ -49,7 +49,7 @@ int main() {
     t->set_n_update_iterations(2);
     t->set_n_corr_iterations(7);
   });
-  evaluator.set_visualize_all_results(false);
+  evaluator.set_visualize_all_results(true);
   evaluator.SaveResults(result_directory);
   evaluator.SetUp();
   evaluator.Evaluate();

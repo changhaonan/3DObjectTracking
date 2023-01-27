@@ -1,18 +1,20 @@
 %YAML:1.2
-AzureKinectColorCamera:
-  - name: "azure_kinect_color"
+LoaderColorCamera:
+  - name: "loader_color"
+    metafile_path: "./camera_color.yaml"
 
-AzureKinectDepthCamera:
-  - name: "azure_kinect_depth"
+LoaderDepthCamera:
+  - name: "loader_depth"
+    metafile_path: "./camera_depth.yaml"
 
 NormalColorViewer:
   - name: "color_viewer"
-    color_camera: "azure_kinect_color"
+    color_camera: "loader_color"
     renderer_geometry: "renderer_geometry"
 
 NormalDepthViewer:
   - name: "depth_viewer"
-    depth_camera: "azure_kinect_depth"
+    depth_camera: "loader_depth"
     renderer_geometry: "renderer_geometry"
 
 RendererGeometry:
@@ -27,7 +29,7 @@ ManualDetector:
   - name: "triangle_manual_detector"
     metafile_path: "./triangle_manual_detector.yaml"
     body: "triangle"
-    color_camera: "azure_kinect_color"
+    color_camera: "loader_color"
 
 RegionModel:
   - name: "triangle_region_model"
@@ -42,14 +44,14 @@ DepthModel:
 RegionModality:
   - name: "triangle_region_modality"
     body: "triangle"
-    color_camera: "azure_kinect_color"
+    color_camera: "loader_color"
     region_model: "triangle_region_model"
-    measure_occlusions: {depth_camera: "azure_kinect_depth"}
+    measure_occlusions: {depth_camera: "loader_depth"}
 
 DepthModality:
   - name: "triangle_depth_modality"
     body: "triangle"
-    depth_camera: "azure_kinect_depth"
+    depth_camera: "loader_depth"
     depth_model: "triangle_depth_model"
 
 Optimizer:

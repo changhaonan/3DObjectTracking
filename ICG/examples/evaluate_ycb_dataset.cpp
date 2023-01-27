@@ -5,9 +5,9 @@
 
 int main() {
   // Directories
-  std::filesystem::path dataset_directory{"/your/path/"};
-  std::filesystem::path external_directory{"/your/path/"};
-  std::filesystem::path result_path{"/your/path/"};
+  std::filesystem::path dataset_directory{"/home/robot-learning/Projects/3DObjectTracking/ICG/dataset"};
+  std::filesystem::path external_directory{"/home/robot-learning/Projects/3DObjectTracking/ICG/external"};
+  std::filesystem::path result_path{"/home/robot-learning/Projects/3DObjectTracking/ICG/result"};
 
   // Dataset configuration
   std::vector<std::string> body_names{"002_master_chef_can",

@@ -3,63 +3,42 @@ LoaderColorCamera:
   - name: "loader_color"
     metafile_path: "./camera_color.yaml"
 
-LoaderDepthCamera:
-  - name: "loader_depth"
-    metafile_path: "./camera_depth.yaml"
-
 NormalColorViewer:
   - name: "color_viewer"
     color_camera: "loader_color"
     renderer_geometry: "renderer_geometry"
 
-NormalDepthViewer:
-  - name: "depth_viewer"
-    depth_camera: "loader_depth"
-    renderer_geometry: "renderer_geometry"
-
 RendererGeometry:
   - name: "renderer_geometry"
-    bodies: ["triangle"]
+    bodies: ["ape"]
 
 Body:
-  - name: "triangle"
-    metafile_path: "./triangle.yaml"
+  - name: "ape"
+    metafile_path: "./ape.yaml"
 
-ManualDetector:
-  - name: "triangle_manual_detector"
-    metafile_path: "./triangle_manual_detector.yaml"
-    body: "triangle"
+StaticDetector:
+  - name: "ape_static_detector"
+    metafile_path: "./detector.yaml"
+    body: "ape"
     color_camera: "loader_color"
 
 RegionModel:
-  - name: "triangle_region_model"
+  - name: "ape_region_model"
     metafile_path: "./default_model.yaml"
-    body: "triangle"
-
-DepthModel:
-  - name: "triangle_depth_model"
-    metafile_path: "./default_model.yaml"
-    body: "triangle"
+    body: "ape"
 
 RegionModality:
-  - name: "triangle_region_modality"
-    body: "triangle"
+  - name: "ape_region_modality"
+    body: "ape"
     color_camera: "loader_color"
-    region_model: "triangle_region_model"
-    measure_occlusions: {depth_camera: "loader_depth"}
-
-DepthModality:
-  - name: "triangle_depth_modality"
-    body: "triangle"
-    depth_camera: "loader_depth"
-    depth_model: "triangle_depth_model"
+    region_model: "ape_region_model"
 
 Optimizer:
-  - name: "triangle_optimizer"
-    modalities: ["triangle_region_modality", "triangle_depth_modality"]
+  - name: "ape_optimizer"
+    modalities: ["ape_region_modality"]
 
 Tracker:
   - name: "tracker"
-    viewers: ["color_viewer", "depth_viewer"]
-    detectors: ["triangle_manual_detector"]
-    optimizers: ["triangle_optimizer"]
+    viewers: ["color_viewer"]
+    detectors: ["ape_static_detector"]
+    optimizers: ["ape_optimizer"]

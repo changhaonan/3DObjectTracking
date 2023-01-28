@@ -1,4 +1,5 @@
-load_directory: "./"
+%YAML:1.2
+load_directory: "/home/robot-learning/Projects/3DObjectTracking/ICG/dataset/RBOT_dataset/ape/frames"
 intrinsics:
    f_u: 638.633
    f_v: 638.377
@@ -15,8 +16,8 @@ camera2world_pose: !!opencv-matrix
             0., 0., 1., 0.,
             0., 0., 0., 1. ]
 depth_scale: 0.001    # only for depth camera
-image_name_pre: "color_camera_image_"
+image_name_pre: "a_regular"
 load_index: 0
-n_leading_zeros: 0
+n_leading_zeros: 4
 image_name_post: ""
 load_image_type: "png"

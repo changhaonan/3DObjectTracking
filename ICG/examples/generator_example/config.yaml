@@ -10,35 +10,35 @@ NormalColorViewer:
 
 RendererGeometry:
   - name: "renderer_geometry"
-    bodies: ["ape"]
+    bodies: ["cracker_box"]
 
 Body:
-  - name: "ape"
-    metafile_path: "./ape.yaml"
+  - name: "cracker_box"
+    metafile_path: "./cracker_box.yaml"
 
 StaticDetector:
-  - name: "ape_static_detector"
+  - name: "cracker_box_static_detector"
     metafile_path: "./detector.yaml"
-    body: "ape"
+    body: "cracker_box"
     color_camera: "loader_color"
 
 RegionModel:
-  - name: "ape_region_model"
+  - name: "cracker_box_region_model"
     metafile_path: "./default_model.yaml"
-    body: "ape"
+    body: "cracker_box"
 
 RegionModality:
-  - name: "ape_region_modality"
-    body: "ape"
+  - name: "cracker_box_region_modality"
+    body: "cracker_box"
     color_camera: "loader_color"
-    region_model: "ape_region_model"
+    region_model: "cracker_box_region_model"
 
 Optimizer:
-  - name: "ape_optimizer"
-    modalities: ["ape_region_modality"]
+  - name: "cracker_box_optimizer"
+    modalities: ["cracker_box_region_modality"]
 
 Tracker:
   - name: "tracker"
     viewers: ["color_viewer"]
-    detectors: ["ape_static_detector"]
-    optimizers: ["ape_optimizer"]
+    detectors: ["cracker_box_static_detector"]
+    optimizers: ["cracker_box_optimizer"]

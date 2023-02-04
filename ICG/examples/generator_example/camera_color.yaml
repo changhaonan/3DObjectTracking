@@ -1,12 +1,12 @@
 %YAML:1.2
-load_directory: "/home/robot-learning/Projects/ScenePose/data/cracker_box/cracker_box_3/color"
+load_directory: "/home/robot-learning/Projects/ScenePose/data/cracker_box_icg/cracker_box_icg_1/color"
 intrinsics:
-   f_u: 1714.1003062833079
-   f_v: 1703.853800261211
-   pp_x: 537.4842015903326
-   pp_y: 965.693428561458
-   width: 1080
-   height: 1920
+   f_u: 610.4415893554688
+   f_v: 609.9561157226563
+   pp_x: 326.2782287597656
+   pp_y: 230.18516540527344
+   width: 640
+   height: 480
 camera2world_pose: !!opencv-matrix
    rows: 4
    cols: 4
@@ -15,7 +15,7 @@ camera2world_pose: !!opencv-matrix
             0., 1., 0., 0.,
             0., 0., 1., 0.,
             0., 0., 0., 1. ]
-depth_scale: 0.001    # only for depth camera
+depth_scale: 1.0    # only for depth camera
 image_name_pre: ""
 load_index: 0
 n_leading_zeros: 0

@@ -24,7 +24,7 @@ StaticDetector:
 
 RegionModel:
   - name: "cracker_box_region_model"
-    metafile_path: "./default_model.yaml"
+    metafile_path: "./cracker_box_model.yaml"
     body: "cracker_box"
 
 RegionModality:
